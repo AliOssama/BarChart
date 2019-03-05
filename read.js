@@ -7,7 +7,7 @@ var ourData = d3.csv("colors.csv");
 var drawBars = function(barData){
   var width = 500;
   var height = 300;
-  var barWidth = width/colorData.length;
+  var barWidth = width/barData.length;
 
   var svg = d3.select("svg")
               .attr("width",width)
