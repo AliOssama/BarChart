@@ -34,7 +34,26 @@ var drawBars = function(barData){
     {
       return d.color;
     })
+
+
+  svg.selectAll("text")
+    .data(barData.amount)
+    .enter()
+    .append("text")
+    .text(function(d) {
+      return d;
+    })
+    .attr("x", function(d,i){
+       return i*barwidth;
+    })
+    .attr("y", function(d)
+    {
+      return height - (d*4);
+
+    })
+
 }
+
 
 ourData.then(function(data)
   {
@@ -42,5 +61,4 @@ ourData.then(function(data)
   },
   function(err){
     console.log(err);
-  }
-)
+  })
