@@ -23,12 +23,12 @@ var drawBars = function(barData){
       })
     .attr("y",function(d)
     {
-      return height - d.amount * 10;
+      return height - d.amount * 20;
     })
     .attr("width",barWidth)
     .attr("height",function(d)
     {
-      return d.amount*10;
+      return d.amount*20;
     })
     .attr("fill",function(d)
     {
