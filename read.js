@@ -1,9 +1,10 @@
-d3.csv("colors.csv", function(data) {
+var ourData = d3.csv("colors.csv");
+//   function(data) {
+//
+//   console.log(data);
+// });
 
-  console.log(data);
-});
-
-var drawGraph = function(barData){
+var drawBars = function(barData){
   var width = 500;
   var height = 300;
   var barWidth = width/colorData.length;
@@ -34,3 +35,12 @@ var drawGraph = function(barData){
       return d.color;
     })
 }
+
+ourData.then(function(data)
+  {
+    drawBars(data);
+  },
+  function(err){
+    console.log(err);
+  }
+)
