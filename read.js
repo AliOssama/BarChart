@@ -33,24 +33,25 @@ var drawBars = function(barData){
     .attr("fill",function(d)
     {
       return d.color;
-    })
+    });
 
 
   svg.selectAll("text")
-    .data(barData.amount)
+    .data(barData)
     .enter()
     .append("text")
     .text(function(d) {
-      return d;
+      return d.amount;
     })
     .attr("x", function(d,i){
-       return i*barwidth;
+       return i*barWidth + (barWidth/2);
     })
     .attr("y", function(d)
     {
-      return height - (d*4);
-
+      return height - (d.amount*10);
     })
+    .attr("fill","white")
+    .attr("text-anchor","middle");
 
 }
 
