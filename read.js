@@ -56,7 +56,6 @@ var drawBars = function(barData){
 
     svg.append("g")
        .attr("class","legend")
-       .attr("transform","translate(50,30)")
        .call(d3.legend);
 
 }
