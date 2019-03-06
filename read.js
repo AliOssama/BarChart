@@ -54,20 +54,25 @@ var drawBars = function(barData){
     .attr("fill","white")
     .attr("text-anchor","middle");
 
+    svg.append("g")
+       .attr("class","legend")
+       .attr("transform","translate(50,30)")
+       .call(d3.legend);
+
 }
 
-var drawLegend = function(barData){
-  svg.append("g")
-     .attr("class","legend")
-     .attr("transform","translate(50,30)")
-     .call(d3.legend);
-}
+// var drawLegend = function(barData){
+//   svg.append("g")
+//      .attr("class","legend")
+//      .attr("transform","translate(50,30)")
+//      .call(d3.legend);
+// }
 
 
 ourData.then(function(data)
   {
     drawBars(data);
-    drawLegend(data);
+    // drawLegend(data);
   },
   function(err){
     console.log(err);
