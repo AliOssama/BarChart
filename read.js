@@ -33,7 +33,8 @@ var drawBars = function(barData){
     .attr("fill",function(d)
     {
       return d.color;
-    });
+    })
+    .attr("data-legend",function(d) {return d.color});
 
 
   svg.selectAll("text")
@@ -55,10 +56,18 @@ var drawBars = function(barData){
 
 }
 
+var drawLegend = function(barData){
+  svg.append("g")
+     .attr("class","legend")
+     .attr("transform","translate(50,30)")
+     .call(d3.legend);
+}
+
 
 ourData.then(function(data)
   {
     drawBars(data);
+    drawLegend(data);
   },
   function(err){
     console.log(err);
