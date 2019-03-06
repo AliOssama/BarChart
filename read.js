@@ -1,18 +1,40 @@
 var ourData = d3.csv("colors.csv");
-var jsonData = d3.csv("colors.json")
+var jsonData = d3.json("colors.json")
 //   function(data) {
 //
 //   console.log(data);
 // });
 
-var drawBars = function(barData){
+var csvSvg = function(data){
   var width = 500;
   var height = 300;
-  var barWidth = width/barData.length;
+  var barWidth = width/data.length;
 
-  var svg = d3.select("svg")
+  var svg = d3.select("#svg1")
               .attr("width",width)
               .attr("height",height)
+  drawBars(data,svg,width,height,barWidth)
+}
+
+var jsonSvg = function(data){
+  var width = 500;
+  var height = 300;
+  var barWidth = width/data.length;
+
+  var svg = d3.select("#svg2")
+              .attr("width",width)
+              .attr("height",height)
+  drawBars(data,svg,width,height,barWidth)
+}
+
+var drawBars = function(barData,svg,width,height,barWidth){
+  // var width = 500;
+  // var height = 300;
+  // var barWidth = width/barData.length;
+  //
+  // var svg = d3.select("svg")
+  //             .attr("width",width)
+  //             .attr("height",height)
 
   svg.selectAll("rect")
      .data(barData)
@@ -50,6 +72,7 @@ var drawBars = function(barData){
     })
     .attr("y", function(d)
     {
+      console.log(d.amount); // test
       return height - (d.amount*10);
     })
     .attr("fill","white")
@@ -60,15 +83,15 @@ var drawBars = function(barData){
 
 ourData.then(function(data)
   {
-    drawBars(data);
+    csvSvg(data);
   },
   function(err){
     console.log(err);
-  })
+  });
 
-  jsonData.then(function(data)
+jsonData.then(function(data)
     {
-      drawBars(data);
+      jsonSvg(data);
     },
     function(err){
       console.log(err);
