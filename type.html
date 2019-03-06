@@ -4,88 +4,52 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="d3.js">
     </script>
-    <title></title>
+    <title>Reading in Data</title>
   </head>
   <body>
     <h1>Reading from the CSV File</h1>
    <svg id="svg1">
    </svg>
-    <div class="legend1">
-     <div class="legend1"> <p class="country-name"><span class="key-dot blue"></span>Blue</p> </div>
-     <div class="legend2"> <p class="country-name"><span class="key-dot green"></span>Green</p> </div>
-	</div>
-     <div class="legend1"> <p class="country-name"><span class="key-dot red"></span>Red</p> </div>
-     <div class="legend1"> <p class="country-name"><span class="key-dot black"></span>Black</p> </div>
-     <div class="legend1"> <p class="country-name"><span class="key-dot purple"></span>Purple</p> </div>
-     <div class="legend1"> <p class="country-name"><span class="key-dot gold"></span>Gold</p> </div>
-     <div class="legend1"> <p class="country-name"><span class="key-dot teal"></span>Teal</p> </div>
+   <div class="legend">
+     <div> <p class="color-name"><span class="key-dot blue"></span>Blue</p> </div>
+     <div> <p class="color-name"><span class="key-dot green"></span>Green</p> </div>
+     <div> <p class="color-name"><span class="key-dot red"></span>Red</p> </div>
+     <div> <p class="color-name"><span class="key-dot black"></span>Black</p> </div>
+     <div> <p class="color-name"><span class="key-dot purple"></span>Purple</p> </div>
+     <div> <p class="color-name"><span class="key-dot gold"></span>Gold</p> </div>
+     <div> <p class="color-name"><span class="key-dot teal"></span>Teal</p> </div>
+   </div>
     <h1>Reading from the JSON File</h1>
     <svg id="svg2">
     </svg>
 
 
     <style>
-    .country-name {
-    margin: 0 !important;
-}
+      .color-name {
+        margin: 0 !important;
+      }
 
-.key-dot {
-    display: inline-block;
-    height: 10px;
-    margin-right: .5em;
-    width: 10px;
-}
+      .key-dot {
+        display: inline-block;
+        height: 10px;
+        margin-right: .5em;
+        width: 10px;
+      }
 
-.legend {
-    margin-right:20px;
-}
+      .legend div{
+        margin-right:20px;
+      }
 
-.blue { background-color: blue;}
-.green { background-color: green;}
-.red { background-color: red;}
-.black { background-color: black;}
-.purple { background-color: purple;}
-.gold {background-color: gold;}
-.teal { background-color: teal;}
+      .blue { background-color: blue;}
+      .green { background-color: green;}
+      .red { background-color: red;}
+      .black { background-color: black;}
+      .purple { background-color: purple;}
+      .gold {background-color: gold;}
+      .teal { background-color: teal;}
 
-
-
-}
-
-</style>
-
-    <!-- <svg width="4000" height="30">
-      <rect width="50" height="25" style="fill:blue">
-        <text y="30" x="2">Austin</text>
-   </svg>
-
-    <svg width="4000" height="30">
-      <rect width="50" height="25" style="fill:green">
-   </svg>
-
-   <svg width="4000" height="30">
-      <rect width="50" height="25" style="fill:red">
-   </svg>
-
-   <svg width="4000" height="30">
-      <rect width="50" height="25" style="fill:black">
-   </svg>
-
-   <svg width="4000" height="30">
-      <rect width="50" height="25" style="fill:purple">
-   </svg>
-
-   <svg width="4000" height="30">
-      <rect width="50" height="25" style="fill:gold">
-   </svg>
-
-   <svg width="4000" height="30">
-      <rect width="50" height="25" style="fill:teal">
-   </svg> -->
-
-
-
-      </body>
+    </style>
+  </body>
   <script src="read.js"></script>
 
 </html>

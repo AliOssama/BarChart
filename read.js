@@ -72,7 +72,7 @@ var drawBars = function(barData,svg,width,height,barWidth){
     })
     .attr("y", function(d)
     {
-      console.log(d.amount); // test
+      // console.log(d.amount);
       return height - (d.amount*10);
     })
     .attr("fill","white")
