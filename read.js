@@ -1,4 +1,5 @@
 var ourData = d3.csv("colors.csv");
+var jsonData = d3.csv("colors.json")
 //   function(data) {
 //
 //   console.log(data);
@@ -64,3 +65,11 @@ ourData.then(function(data)
   function(err){
     console.log(err);
   })
+
+  jsonData.then(function(data)
+    {
+      drawBars(data);
+    },
+    function(err){
+      console.log(err);
+    })
